@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_move_line_prev_invoiced_search_view" model="ir.ui.view">
+       <field name="name">account.move.line.prev.invoiced.search.view</field>
+       <field name="model">account.move.line</field>
+        <field name="arch" type="xml">
+            <search string="Product" >
+                <field name="product_id" />
+                <group expand="1" string="Group By">
+                    <filter name="groupby_product_id" context="{'group_by' : 'product_id'}" string="Product"/>
+                </group>
+            </search>
+       </field>
+    </record>
+
+    <record id="account_move_line_prev_invoiced_tree_view" model="ir.ui.view">
+        <field name="name">account.move.line.prev.invoiced.tree.view</field>
+        <field name="model">account.move.line</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Items" default_order="date desc">
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="quantity"/>
+                <field name="price_unit"/>
+                <field name="price_subtotal"/>
+                <field name="price_total"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

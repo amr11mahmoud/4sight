@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="account_move_smart_button_prev_invoice" model="ir.ui.view">
+            <field name="name">account.move.smart.button.prev_invoice</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="open_prev_invoiced_view">
+                        <div class="o_stat_info">
+                            <field name="prev_invoiced_count" class="o_stat_value"/>
+                            <span class="o_stat_text">Prev Invoices</span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
