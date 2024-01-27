@@ -3,7 +3,6 @@ from odoo import models, fields, api
 
 class AccountMove(models.Model):
     _inherit = 'account.move'
-    _description = 'New Description'
 
     prev_invoiced_count = fields.Integer(compute="_compute_prev_invoiced_count")
 

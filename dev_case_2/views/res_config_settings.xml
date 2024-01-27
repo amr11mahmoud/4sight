@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_sale_dropship" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale.dropship</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='sale_management']" position="inside">
+				<field name="is_installed_sale" invisible="1"/>
+					<h2 attrs="{'invisible': [('is_installed_sale', '=', False)]}">Logistics</h2>
+					<div class="row mt16 o_settings_container" name="request_vendor_setting_container2">
+						<div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible': [('is_installed_sale', '=', False)]}">
+							<div class="o_setting_left_pane">
+								<field name="custom_dropship"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="custom_dropship" string="Custom Drop-Ship"/>
+								<div class="text-muted">
+									Choose Which supplier to drop-ship when creating sale order
+								</div>
+							</div>
+						</div>
+					</div>
+             </xpath>
+        </field>
+    </record>
+
+</odoo>

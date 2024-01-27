@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="website_sale_product_retail_price" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='o_product_terms_and_share']" position="after">
+            <div class="o_row">
+                <div class="col">
+                    <h4>Retail Price: <span t-esc="retail_price"/> <span t-esc="retail_price_currency"/></h4>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
